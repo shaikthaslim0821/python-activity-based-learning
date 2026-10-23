@@ -1,0 +1,63 @@
+# Hospital Ward Occupancy Monitoring
+
+beds = [
+    [8, 9, 10],
+    [5, 7, 6],
+    [9, 10, 11]
+]
+
+capacity = [10, 8, 10]
+max_beds = 0
+
+for i in range(3):
+    print("\nWard", i + 1)
+
+    for j in range(3):
+        occupied = beds[i][j]
+        percent = (occupied / capacity[i]) * 100
+
+        print("Day", j + 1, ":", percent, "% occupied")
+
+        if occupied > capacity[i]:
+            print("Capacity exceeded!")
+
+        if occupied > max_beds:
+            max_beds = occupied
+            ward = i + 1
+            day = j + 1
+
+print("\nPeak Demand")
+print("Ward:", ward)
+print("Day:", day)
+print("Occupied Beds:", max_beds)# Hospital Ward Occupancy Monitoring
+
+beds = [
+    [8, 9, 10],
+    [5, 7, 6],
+    [9, 10, 11]
+]
+
+capacity = [10, 8, 10]
+max_beds = 0
+
+for i in range(3):
+    print("\nWard", i + 1)
+
+    for j in range(3):
+        occupied = beds[i][j]
+        percent = (occupied / capacity[i]) * 100
+
+        print("Day", j + 1, ":", percent, "% occupied")
+
+        if occupied > capacity[i]:
+            print("Capacity exceeded!")
+
+        if occupied > max_beds:
+            max_beds = occupied
+            ward = i + 1
+            day = j + 1
+
+print("\nPeak Demand")
+print("Ward:", ward)
+print("Day:", day)
+print("Occupied Beds:", max_beds)
