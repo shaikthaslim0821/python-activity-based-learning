@@ -1,0 +1,28 @@
+n = int(input("Enter number of students: "))
+students = []
+
+for i in range(n):
+    print("\nStudent", i + 1)
+    name = input("Enter student name: ")
+    marks = float(input("Enter aggregate marks: "))
+    subject = float(input("Enter minimum subject marks: "))
+    attendance = float(input("Enter attendance: "))
+    income = float(input("Enter family income: "))
+
+    if marks >= 75 and subject >= 60 and attendance >= 75 and income <= 250000:
+        students.append([name, marks, subject, attendance, income])
+
+students.sort(key=lambda x: (-x[1], -x[2], -x[3], x[4], x[0]))
+
+print("\nEligible Students and Rankings:")
+for i, s in enumerate(students, 1):
+    print(i, s[0], "Marks:", s[1])
+
+k = int(input("\nEnter number of scholarships: "))
+
+print("\nScholarship Results:")
+for i, s in enumerate(students):
+    if i < k:
+        print(s[0], "- Scholarship Selected")
+    else:
+        print(s[0], "- Not Selected")
