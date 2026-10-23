@@ -1,0 +1,28 @@
+# Bus Passenger Occupancy Simulation
+
+capacity = 50
+passengers = 0
+
+for i in range(3):
+    print("\nStop", i + 1)
+
+    board = int(input("Enter boarding passengers: "))
+    exit = int(input("Enter alighting passengers: "))
+
+    if board < 0 or exit < 0:
+        print("Invalid input")
+
+    elif exit > passengers:
+        print("Invalid alighting count")
+
+    else:
+        passengers = passengers - exit + board
+
+        print("Total passengers:", passengers)
+
+        if passengers > capacity:
+            print("Capacity exceeded!")
+        else:
+            print("Within capacity")
+
+print("\nFinal passengers:", passengers)
