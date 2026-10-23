@@ -1,0 +1,38 @@
+# Student Marks Matrix Analysis
+
+marks = [
+    [80, 70, 90],
+    [60, 50, 65],
+    [40, 45, 35]
+]
+
+# Student averages
+for i in range(3):
+    total = 0
+    for j in range(3):
+        total += marks[i][j]
+    print("Student", i + 1, "Average:", total / 3)
+
+# Subject averages
+for j in range(3):
+    total = 0
+    for i in range(3):
+        total += marks[i][j]
+    avg = total / 3
+    print("Subject", j + 1, "Average:", avg)
+
+# Find top performer
+best = 0
+for i in range(1, 3):
+    if sum(marks[i]) > sum(marks[best]):
+        best = i
+
+print("Top Performer: Student", best + 1)
+
+# Find subjects with low average
+for j in range(3):
+    total = 0
+    for i in range(3):
+        total += marks[i][j]
+    if total / 3 < 50:
+        print("Low Average: Subject", j + 1)
