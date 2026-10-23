@@ -1,0 +1,26 @@
+# Campus Registration Identifier Analyzer
+
+sid = input("Enter Student ID: ")
+
+if len(sid) == 10 and sid.isalnum():
+    year = sid[0:2]
+    branch = sid[2:4]
+    number = sid[4:10]
+
+    print("Admission Year: 20" + year)
+
+    if branch == "CS":
+        print("Branch: Computer Science")
+    elif branch == "EC":
+        print("Branch: Electronics")
+    elif branch == "ME":
+        print("Branch: Mechanical")
+    elif branch == "EE":
+        print("Branch: Electrical")
+    else:
+        print("Invalid Branch Code")
+
+    print("Student Number:", number)
+
+else:
+    print("Invalid Student ID")
