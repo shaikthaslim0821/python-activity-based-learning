@@ -1,0 +1,33 @@
+# Student Performance Trend Analysis
+
+name = input("Enter student name: ")
+
+m1 = int(input("Enter Exam 1 marks: "))
+m2 = int(input("Enter Exam 2 marks: "))
+m3 = int(input("Enter Exam 3 marks: "))
+
+avg = (m1 + m2 + m3) / 3
+
+print("\nStudent Name:", name)
+print("Average Marks:", avg)
+
+if m3 > m1:
+    print("Performance: Improved")
+elif m3 < m1:
+    print("Performance: Declined")
+else:
+    print("Performance: No Change")
+
+if m1 < 40 and m2 < 40 and m3 < 40:
+    print("Status: Consistently Weak")
+else:
+    print("Status: Not Consistently Weak")
+
+if avg >= 75:
+    print("Grade: Excellent")
+elif avg >= 60:
+    print("Grade: Good")
+elif avg >= 40:
+    print("Grade: Average")
+else:
+    print("Grade: Poor")
