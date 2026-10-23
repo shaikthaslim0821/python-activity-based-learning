@@ -1,0 +1,38 @@
+budget = int(input("Enter your budget: "))
+usage = int(input("Enter data usage in GB: "))
+days = int(input("Enter required validity in days: "))
+
+plans = [
+    ["Plan A", 199, 2, 28],
+    ["Plan B", 299, 3, 28],
+    ["Plan C", 399, 5, 56]
+]
+
+best_cost = 99999
+best_plan = "None"
+
+for p in plans:
+    name = p[0]
+    price = p[1]
+    data = p[2]
+    validity = p[3]
+
+    excess = 0
+    if usage > data:
+        excess = (usage - data) * 50
+
+    total = price + excess
+
+    print(name, "Total Cost:", total)
+
+    if usage <= data and days <= validity and total <= budget:
+        if total < best_cost:
+            best_cost = total
+            best_plan = name
+
+print("Best Plan:", best_plan)
+
+if best_plan != "None":
+    print("Minimum Cost: Rs.", best_cost)
+else:
+    print("No eligible plan available.")
