@@ -1,0 +1,35 @@
+# Hospital Billing and Patient Classification
+
+name = input("Enter patient name: ")
+age = int(input("Enter patient age: "))
+
+consultation = float(input("Enter consultation charges: "))
+diagnostic = float(input("Enter diagnostic charges: "))
+treatment = float(input("Enter treatment charges: "))
+
+# Validate charges
+if consultation < 0 or diagnostic < 0 or treatment < 0:
+    print("Invalid charges!")
+else:
+    total = consultation + diagnostic + treatment
+
+    # Apply concession and classify patient
+    if age >= 60:
+        concession = total * 0.10
+        category = "Senior Citizen"
+    else:
+        concession = 0
+        category = "Regular Patient"
+
+    final_bill = total - concession
+
+    # Display bill
+    print("\n--- Hospital Bill ---")
+    print("Patient Name:", name)
+    print("Patient Category:", category)
+    print("Consultation Charges: Rs.", consultation)
+    print("Diagnostic Charges: Rs.", diagnostic)
+    print("Treatment Charges: Rs.", treatment)
+    print("Total Bill: Rs.", total)
+    print("Concession: Rs.", concession)
+    print("Final Bill: Rs.", final_bill)
