@@ -1,0 +1,37 @@
+balance = 5000
+deposit = 0
+withdraw = 0
+
+n = int(input("Enter number of transactions: "))
+
+for i in range(n):
+    print("1. Deposit")
+    print("2. Withdraw")
+    choice = int(input("Enter choice: "))
+    amount = int(input("Enter amount: "))
+
+    if amount <= 0:
+        print("Invalid amount")
+
+    elif choice == 1:
+        balance += amount
+        deposit += amount
+        print("Deposit successful")
+
+    elif choice == 2:
+        if amount > 2000:
+            print("Withdrawal limit exceeded")
+        elif amount > balance:
+            print("Insufficient balance")
+        else:
+            balance -= amount
+            withdraw += amount
+            print("Withdrawal successful")
+
+    else:
+        print("Invalid choice")
+
+print("\nTransaction Summary")
+print("Total Deposits:", deposit)
+print("Total Withdrawals:", withdraw)
+print("Final Balance:", balance)
